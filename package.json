@@ -13,12 +13,17 @@
   "eslintConfig": {
     "extends": [
       "eslint-config-personal"
-    ]
+    ],
+    "rules": {
+      "import/prefer-default-export": "off"
+    }
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "jszip": "^3.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-autocomplete": "^1.8.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
