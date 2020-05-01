@@ -13,9 +13,16 @@ export default function IngredientPicker({ allowFreeEntry = false, label, onSele
           getItemValue={item => item.name}
           items={ingredients}
           renderItem={(item, isHighlighted) => (
-            <div style={{ backgroundColor: isHighlighted ? `#ededed` : `transparent` }}>{item.name}</div>
+            <div
+              style={{
+                backgroundColor: isHighlighted ? `#ededed` : `transparent`,
+                padding: `0.5em 0.25em`,
+              }}
+            >
+              {item.name}
+            </div>
           )}
-          shouldItemRender={(item, value) => [item.label, item.id].some(str => new RegExp(value, `i`).test(str))}
+          shouldItemRender={(item, value) => [item.name, item.id].some(str => new RegExp(value, `i`).test(str))}
           // TODO: Randomize example from ingredients
           inputProps={{ placeholder: `e.g. blaze rod` }}
           onChange={evt => setInputValue(evt.target.value)}
